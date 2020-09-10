@@ -1,0 +1,27 @@
+﻿@model List<WebTaskSnippet.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+    <div  class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.FullName</td>
+                        <td> @Html.ActionLink("Edit", "Edit", new { Id = item.StudentId }) </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+

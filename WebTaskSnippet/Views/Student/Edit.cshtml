@@ -1,0 +1,29 @@
+﻿@model WebTaskSnippet.Models.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+    <div>
+        <form action="Edit" method="post">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Address</label>
+                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Partial("_PartialAuditModal", Model, new ViewDataDictionary { { "btnId", "btnClick" } })
+            </div>
+            @Html.HiddenFor(m => m.StudentId)
+        </form>
+    </div>
+
